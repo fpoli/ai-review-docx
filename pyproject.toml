@@ -1,0 +1,23 @@
+[project]
+name = "ai-review-docx"
+version = "0.1.0"
+description = "A tool for reviewing and correcting grammar and spelling in Word documents"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "diff-match-patch>=20241021",
+    "diskcache>=5.6.3",
+    "loguru>=0.7.3",
+    "litellm>=1.42.1",
+    "python-docx>=1.1.2",
+]
+
+[project.scripts]
+ai-review-docx = "ai_review_docx.cli:app"
+
+[project.entry-points."pipx.run"]
+ai-review-docx = "ai_review_docx.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
